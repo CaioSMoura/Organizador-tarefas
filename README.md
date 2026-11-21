@@ -32,6 +32,12 @@ Manipulação de Dados: Uso intensivo de métodos funcionais (map, filter, find,
 
 Componentização: Arquitetura modular com reaproveitamento de UI (TaskForm, TaskItem, CardContainer com children e spread props, IndicadorBox).
 
+## 📸 Telas do Aplicativo
+
+| Página Inicial | Nova Tarefa | Detalhes da Tarefa | Tarefa Concluída |
+| :---: | :---: | :---: | :---: |
+| ![Página Inicial](./assets/screenshots/pagina-inicial.jpeg) | ![Nova Tarefa](./assets/screenshots/nova-tarefa.jpeg) | ![Detalhes da Tarefa](./assets/screenshots/detalhes-tarefa.jpeg) | ![Tarefa Concluída](./assets/screenshots/tarefa-concluida.jpeg) |
+
 📂 Estrutura do Projeto
 
 organizador-tarefas/
