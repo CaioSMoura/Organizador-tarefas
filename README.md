@@ -1,56 +1,84 @@
-# Welcome to your Expo app 👋
+📋 Organizador de Tarefas Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile multiplataforma desenvolvido em React Native com Expo e Expo Router para gestão de atividades pessoais e profissionais. O projeto foi projetado com foco em arquitetura limpa em JavaScript puro, gerenciamento de estado previsível em memória e navegação declarativa baseada em arquivos.
 
-## Get started
+🎯 Funcionalidades
 
-1. Install dependencies
+Dashboard em Tempo Real: Exibição automática de indicadores (total de tarefas, pendentes e concluídas) calculados diretamente a partir do estado da aplicação.
 
-   ```bash
-   npm install
-   ```
+CRUD Completo de Tarefas:
 
-2. Start the app
+Cadastro: Criação de tarefas com título obrigatório, descrição opcional, categoria, nível de prioridade (baixa, média ou alta) e data de vencimento.
 
-   ```bash
-   npx expo start
-   ```
+Listagem Otimizada: Renderização via FlatList com diferenciação visual clara entre itens pendentes e concluídos, além de alternância rápida de status.
 
-In the output, you'll find options to open the app in a
+Detalhes Dinâmicos: Visualização completa das informações da atividade através de rotas parametrizadas (/detalhes/[id]).
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Edição: Atualização isolada apenas da tarefa selecionada (/editar/[id]) reutilizando o componente de formulário.
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Exclusão Segura: Remoção com diálogo nativo de confirmação (Alert) antes de excluir o registro.
 
-## Get a fresh project
+Filtros Combinados: Filtragem por status (Todas, Pendentes, Concluídas) e por prioridade (Alta, Média, Baixa) sem mutar a lista original.
 
-When you're ready, run:
+🛠️ Tecnologias e Conceitos Aplicados
 
-```bash
-npm run reset-project
-```
+Core: React Native, Expo SDK e JavaScript (ES6+).
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Navegação: Expo Router (Stack Navigation, rotas dinâmicas [id], Link, useRouter, useLocalSearchParams).
 
-### Other setup steps
+Gerenciamento de Estado: React Context API + useState com atualizações funcionais imutáveis, sem uso de bibliotecas externas ou persistência local (armazenamento em memória).
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Manipulação de Dados: Uso intensivo de métodos funcionais (map, filter, find, reduce), destructuring e spread operator.
 
-## Learn more
+Componentização: Arquitetura modular com reaproveitamento de UI (TaskForm, TaskItem, CardContainer com children e spread props, IndicadorBox).
 
-To learn more about developing your project with Expo, look at the following resources:
+📂 Estrutura do Projeto
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+organizador-tarefas/
+├── assets/                 # Ícones e imagens estáticas do aplicativo
+└── src/
+    ├── app/                # Rotas e telas gerenciadas pelo Expo Router
+    │   ├── _layout.js      # Configuração da Stack Navigation e Provider global
+    │   ├── index.js        # Dashboard, indicadores, filtros e FlatList
+    │   ├── cadastro.js     # Tela de criação de nova tarefa
+    │   ├── detalhes/
+    │   │   └── [id].js     # Tela de detalhes, conclusão e exclusão
+    │   └── editar/
+    │       └── [id].js     # Tela de edição de tarefa existente
+    ├── components/         # Componentes de interface reutilizáveis
+    │   ├── CardContainer.js
+    │   ├── IndicadorBox.js
+    │   ├── TaskForm.js
+    │   └── TaskItem.js
+    └── context/
+        └── TasksContext.js # Estado em memória e regras de negócio
 
-## Join the community
 
-Join our community of developers creating universal apps.
+🚀 Como Executar o Projeto
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Pré-requisitos
+
+Node.js (versão LTS recomendada: >= 22.13.0)
+
+Aplicativo Expo Go instalado no dispositivo físico (iOS/Android) ou emulador configurado
+
+Passo a passo
+
+# 1. Clone o repositório
+git clone https://github.com/CaioSMoura/Organizador-tarefas.git
+
+# 2. Acesse a pasta do projeto
+cd Organizador-tarefas
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento Expo
+npx expo start
+
+
+Após iniciar, escaneie o QR Code exibido no terminal utilizando a câmera do iPhone (ou o app Expo Go no Android).
+
+👨‍💻 Autor
+
+Desenvolvido por Caio Moura — GitHub
